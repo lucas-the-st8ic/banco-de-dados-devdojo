@@ -19,5 +19,8 @@ SELECT 90 % 60 AS [RESTO DA DIVISAO]
 SELECT	1 + 3 AS SOMA,
 		5 - 10 AS [SUB (-1)],
 		1700 + (-1900) AS NEG,
-		5 * (5 + 1) AS MULT_SOM
+		5 * (5 + 1) AS MULT_SOM,
+		-5 * (500 / 40) % 3 AS TODO
+
+SELECT 1 + '1' AS SOMA
 		
