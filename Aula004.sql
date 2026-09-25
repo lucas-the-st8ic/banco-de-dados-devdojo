@@ -23,4 +23,21 @@ SELECT	1 + 3 AS SOMA,
 		-5 * (500 / 40) % 3 AS TODO
 
 SELECT 1 + '1' AS SOMA
-		
+
+SELECT '1' + 1
+
+SELECT '1' + '1' AS SOMA3 -- SInal de soma(+) com textos será uma concatenação.
+
+SELECT '1' + '1' + 1
+
+SELECT '1' + ('1' * 4)
+
+SELECT '1' + '1A' + 5
+
+SELECT  '5' * '5'
+
+SELECT 'Bob ' + ' Esponja' AS nome
+
+SELECT 'DevDojo' - 2
+
+SELECT 5 + ('4' * '5')
