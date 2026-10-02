@@ -19,6 +19,11 @@ SELECT * FROM Person.Person
 
 	SELECT * FROM Person.Person
 	WHERE BusinessEntityID > 150
-	AND	FirstName <> 'Aaron'
-	AND FirstName <> 'G'
-	ORDER BY FirstName
+	AND	Firstname = 'Fabricio'
+	AND	( MiddleName = 'DevDojo';
+	--OR MiddleName = 'G'AND LastName = 'Boladao')
+	--ORDER BY FirstName;
+
+	SELECT * FROM Person.Person
+	WHERE BusinessEntityID BETWEEN 600 AND 800;
+	
