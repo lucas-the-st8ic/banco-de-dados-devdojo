@@ -20,10 +20,17 @@ SELECT * FROM Person.Person
 	SELECT * FROM Person.Person
 	WHERE BusinessEntityID > 150
 	AND	Firstname = 'Fabricio'
-	AND	( MiddleName = 'DevDojo';
+	AND	( MiddleName = 'DevDojo')
 	--OR MiddleName = 'G'AND LastName = 'Boladao')
 	--ORDER BY FirstName;
 
 	SELECT * FROM Person.Person
 	WHERE BusinessEntityID BETWEEN 600 AND 800;
 	
+	
+	SELECT * FROM Person.Person
+	WHERE BusinessEntityID IN (1, 2, 3, 4, 
+	659, 500, 900, 4500)
+
+	SELECT * FROM Person.Person
+	WHERE FirstName IN('Ken', 'Gigi', 'Aaron')
