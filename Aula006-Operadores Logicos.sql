@@ -34,3 +34,11 @@ SELECT * FROM Person.Person
 
 	SELECT * FROM Person.Person
 	WHERE FirstName IN('Ken', 'Gigi', 'Aaron')
+	ORDER BY FirstName;
+
+	SELECT * FROM Person.Person
+	WHERE FirstName NOT IN('Ken', 'Gigi', 'Aaron')
+	ORDER BY FirstName;
+
+	SELECT * FROM Person.Person
+	WHERE FirstName LIKE 'G%'
