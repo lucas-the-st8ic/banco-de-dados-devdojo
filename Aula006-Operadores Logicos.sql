@@ -41,4 +41,19 @@ SELECT * FROM Person.Person
 	ORDER BY FirstName;
 
 	SELECT * FROM Person.Person
-	WHERE FirstName LIKE 'G%'
+	--WHERE FirstName LIKE 'G%'
+	WHERE FirstName LIKE 'G__a'
+	ORDER BY FirstName
+
+	SELECT * FROM Person.Person
+	--WHERE FirstName LIKE 'G%'
+	WHERE FirstName NOT LIKE '[ABCDEFG]__a'
+	ORDER BY FirstName
+
+
+	-- ^ Significa negação, 
+	--aquilo que não for igual a algo ou ao intervalo
+	SELECT * FROM Person.Person
+	
+	WHERE FirstName NOT LIKE '[^ABCDEFG]__a'
+	ORDER BY FirstName
