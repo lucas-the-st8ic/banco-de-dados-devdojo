@@ -4,20 +4,17 @@ JOIN
 INNER JOIN - Junta Elementos comuns de duas tabelas
 */
 
-SELECT PP.BusinessEntityID,
-		Title,
+
+SELECT	PP.BusinessEntityID AS [PP.BusinessEntityID],
+		HRE.BusinessEntityID AS [HRE.BusinessEntityID],
 		FirstName,
 		MiddleName,
 		LastName,
-		EmailAddress,
-		PEA.BusinessEntityID,
-		PPP.PhoneNumber
-
-FROM Person.Person AS PP
-INNER JOIN Person.EmailAddress AS PEA
-ON PP.BusinessEntityID = PEA.EmailAddressID	
-JOIN Person.PersonPhone AS PPP
-ON PEA.BusinessEntityID = PPP.BusinessEntityID
-
---SELECT * FROM Person.EmailAddress
---SELECT * FROM Person.Person
+		LoginID,
+		BirthDate
+		
+FROM Person.Person AS PP					--19.972
+LEFT JOIN HumanResources.Employee AS HRE			--290
+ON PP.BusinessEntityID = HRE.BusinessEntityID
+ORDER BY PP.BusinessEntityID
+--SELECT * FROM HumanResources.Employee
