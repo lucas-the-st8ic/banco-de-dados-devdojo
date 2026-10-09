@@ -1,0 +1,23 @@
+/*
+JOIN
+
+INNER JOIN - Junta Elementos comuns de duas tabelas
+*/
+
+SELECT PP.BusinessEntityID,
+		Title,
+		FirstName,
+		MiddleName,
+		LastName,
+		EmailAddress,
+		PEA.BusinessEntityID,
+		PPP.PhoneNumber
+
+FROM Person.Person AS PP
+INNER JOIN Person.EmailAddress AS PEA
+ON PP.BusinessEntityID = PEA.EmailAddressID	
+JOIN Person.PersonPhone AS PPP
+ON PEA.BusinessEntityID = PPP.BusinessEntityID
+
+--SELECT * FROM Person.EmailAddress
+--SELECT * FROM Person.Person
