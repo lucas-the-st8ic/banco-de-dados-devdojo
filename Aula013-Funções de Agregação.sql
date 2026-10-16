@@ -1,0 +1,16 @@
+/*
+COUNT: CONTAGEM
+MIN: MINIMO
+MAX: MAXIMO
+SUM: SOMATORIO
+AVG: MEDIA
+*/
+
+SELECT COUNT(*) FROM Person.Person
+
+SELECT COUNT(*) AS CONTADOR,
+			FirstName
+	FROM Person.Person
+GROUP BY FirstName
+
+SELECT DISTINCT FirstName FROM Person.Person
