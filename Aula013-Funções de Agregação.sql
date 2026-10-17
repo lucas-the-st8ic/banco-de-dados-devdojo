@@ -8,9 +8,17 @@ AVG: MEDIA
 
 SELECT COUNT(*) FROM Person.Person
 
+SELECT COUNT (*) FROM Sales.SalesPerson
+
+
 SELECT COUNT(*) AS CONTADOR,
-			FirstName
+			FirstName,
+			MiddleName
+
 	FROM Person.Person
-GROUP BY FirstName
+	WHERE	MiddleName IS NOT NULL
+GROUP BY	FirstName,
+			MiddleName
+			
 
 SELECT DISTINCT FirstName FROM Person.Person
