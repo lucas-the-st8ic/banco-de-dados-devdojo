@@ -21,4 +21,11 @@ GROUP BY	FirstName,
 			MiddleName
 			
 
-SELECT DISTINCT FirstName FROM Person.Person
+SELECT MIN(BusinessEntityID) AS Minimo,
+		MIN(ModifiedDate) AS [Data Modificada]
+	FROM Person.Person
+
+	
+SELECT MAX(BusinessEntityID) AS Maximo,
+		MAX(ModifiedDate) AS [Data Modificada]
+	FROM Person.Person
