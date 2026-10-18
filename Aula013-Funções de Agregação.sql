@@ -29,3 +29,35 @@ SELECT MIN(BusinessEntityID) AS Minimo,
 SELECT MAX(BusinessEntityID) AS Maximo,
 		MAX(ModifiedDate) AS [Data Modificada]
 	FROM Person.Person
+
+
+SELECT SUM(BusinessEntityID) AS SOMA
+	FROM Person.Person
+
+SELECT AVG(BusinessEntityID)
+	FROM Person.Person
+
+SELECT	SSP.BusinessEntityID,
+		--FirstName,
+		MiddleName,
+		--LastName,
+		--TerritoryID,
+		SUM(SalesQuota) AS SalesQuota
+		--Bonus,
+		--CommissionPct,
+		-- SalesYTD,
+		--SalesLastYear,
+		--PP.ModifiedDate
+	FROM Sales.SalesPerson AS SSP
+	JOIN Person.Person AS PP
+		ON SSP.BusinessEntityID = PP.BusinessEntityID
+	GROUP BY	SSP.BusinessEntityID,
+				--FirstName,
+				MiddleName
+				--LastName,
+				--TerritoryID,
+				--Bonus,
+				--CommissionPct,
+				--SalesYTD,
+				--SalesLastYear,
+				--PP.ModifiedDate
