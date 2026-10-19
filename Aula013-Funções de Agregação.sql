@@ -37,7 +37,7 @@ SELECT SUM(BusinessEntityID) AS SOMA
 SELECT AVG(BusinessEntityID)
 	FROM Person.Person
 
-SELECT	SSP.BusinessEntityID,
+SELECT	--SSP.BusinessEntityID,
 		--FirstName,
 		MiddleName,
 		--LastName,
