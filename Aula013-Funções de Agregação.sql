@@ -126,4 +126,20 @@ FROM HumanResources.EmployeePayHistory
 GROUP BY RateChangeDate
 HAVING 
     SUM(Rate) < 7.000 
+  
+  
+SELECT 
+    SUM(Rate) AS [Rate],
+    RateChangeDate
+FROM HumanResources.EmployeePayHistory
+GROUP BY RateChangeDate
+HAVING 
+    SUM(Rate) < 7.000
     
+SELECT 
+    SUM(Rate) AS [SUM],
+    MIN(Rate) AS [MIN],
+    MAX(Rate) AS [MAX],
+    COUNT(Rate) AS [COUNT],
+    AVG(Rate) AS [AVG]
+FROM HumanResources.EmployeePayHistory
