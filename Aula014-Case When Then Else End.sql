@@ -50,7 +50,6 @@ SELECT
 
 	Rate,
 	CASE
-		
 		WHEN Rate < 12.000 THEN 'Salário Minimo'
 		WHEN Rate BETWEEN 12.000 
 					AND 20.000 THEN 'EMPRESARIO'
