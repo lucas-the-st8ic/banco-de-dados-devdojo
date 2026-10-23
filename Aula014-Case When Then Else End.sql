@@ -33,8 +33,13 @@ SELECT
 		ELSE 'Not Found'
 	END AS MaritalStatus, 
 		
+	CASE
+		Gender
+		WHEN 'M' THEN 'Masculino'
+		WHEN 'F' THEN 'Feminino'
+		ELSE 'Not Found'
+	END AS Gender,
 
-	Gender,
 	PersonType,
 	NameStyle,
 	Title,
@@ -42,7 +47,17 @@ SELECT
 	FirstName,
 	MiddleName,
 	LastName,
+
 	Rate,
+	CASE
+		
+		WHEN Rate < 12.000 THEN 'Salário Minimo'
+		WHEN Rate BETWEEN 12.000 
+					AND 20.000 THEN 'EMPRESARIO'
+		WHEN Rate > 20.000 THEN 'MILIONARIO'
+		ELSE 'Not Found'
+	END AS [Comparação Rate],
+
 	PayFrequency,
 	PEA.EmailAddress,
 	PPP.PhoneNumber,
