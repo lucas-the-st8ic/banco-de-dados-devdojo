@@ -46,6 +46,14 @@ SELECT
 
 	FirstName,
 	MiddleName,
+
+	CASE
+		WHEN (MiddleName = 'E' OR MiddleName = 'A')
+			THEN 'Vogais'
+		WHEN (MiddleName = 'E' OR MiddleName = 'A')
+			AND Title IS NOT NULL THEN 'Vogais_2'
+		ELSE 'Tudo Junto'
+	END AS MiddleName_diferente,
 	LastName,
 
 	Rate,
@@ -56,6 +64,14 @@ SELECT
 		WHEN Rate > 20.000 THEN 'MILIONARIO'
 		ELSE 'Not Found'
 	END AS [Comparação Rate],
+
+	CASE
+		WHEN Rate < 12.000 THEN (Rate * 3)
+		WHEN Rate BETWEEN 12.000 
+					AND 20.000 THEN Rate * 1.1
+		WHEN Rate > 20.000 THEN Rate * 0.1
+		--ELSE 'Not Found'
+	END AS [Comparação Numeral],
 
 	PayFrequency,
 	PEA.EmailAddress,
