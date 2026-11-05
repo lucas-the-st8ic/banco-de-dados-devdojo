@@ -1,0 +1,30 @@
+/*
+DATENAME(Parte_da_data/Hora, Data/Nome_da_coluna) : Retorno será do tipo inteiro
+*/
+
+SELECT GETDATE() AS [GETDATE()],
+	DATEPART(HOUR, GETDATE()) AS HORA,
+	DATEPART(MINUTE, GETDATE()) AS MINUTO,
+	DATEPART(YEAR, GETDATE()) AS ANO,
+
+	YEAR(GETDATE()) AS ANO2,
+	MONTH(GETDATE()) AS MÊS,
+	DAY(GETDATE()) AS DIA,
+
+	DATEPART(MICROSECOND, SYSDATETIME()) AS [MICROSECOND],
+	DATEPART(NANOSECOND, SYSDATETIME()) AS [NANO],
+
+	DATENAME(MONTH, GETDATE()) AS NOME_DO_MES,
+	DATENAME(DAY, GETDATE()) AS DIA_DO_MES;
+
+
+SELECT	BusinessEntityID,
+		Title,
+		FirstName,
+		MiddleName,
+		LastName,
+		TRY_CAST(ModifiedDate AS DATE) AS ModifiedDate,
+		DATEPART(YEAR, ModifiedDate) AS ANO
+	FROM Person.Person
+WHERE DATEPART(YEAR, ModifiedDate) = 2008
+	AND DATENAME(MONTH, ModifiedDate) = 'Dezembro'
