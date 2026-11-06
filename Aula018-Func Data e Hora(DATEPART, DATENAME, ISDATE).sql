@@ -1,8 +1,13 @@
 /*
-DATENAME(Parte_da_data/Hora, Data/Nome_da_coluna) : Retorno será do tipo inteiro
+DATEPART(Parte_da_data/Hora, Data/Nome_da_coluna) : Retorno será do tipo inteiro
+DATENAME(Parte_da_data/hora, Data/Nome_da_coluna) : retorno do tipo texto (nvarchar)
+ISDATE(Nome_da_coluna) : retorno 1 = true | 0 = FALSE
 */
 
-SELECT GETDATE() AS [GETDATE()],
+SELECT 
+	ISDATE(GETDATE() ) AS [ISDATE()],
+	ISDATE('20101231') AS [ISDATE2()],
+	GETDATE() AS [GETDATE()],
 	DATEPART(HOUR, GETDATE()) AS HORA,
 	DATEPART(MINUTE, GETDATE()) AS MINUTO,
 	DATEPART(YEAR, GETDATE()) AS ANO,
@@ -24,7 +29,9 @@ SELECT	BusinessEntityID,
 		MiddleName,
 		LastName,
 		TRY_CAST(ModifiedDate AS DATE) AS ModifiedDate,
-		DATEPART(YEAR, ModifiedDate) AS ANO
+		DATEPART(YEAR, ModifiedDate) AS ANO,
+		ISDATE(ModifiedDate) AS VERIFICADATA,
+		ISDATE(TRY_CONVERT(VARCHAR(10), ModifiedDate, 103)) AS VERIFY
 	FROM Person.Person
 WHERE DATEPART(YEAR, ModifiedDate) = 2008
 	AND DATENAME(MONTH, ModifiedDate) = 'Dezembro'
